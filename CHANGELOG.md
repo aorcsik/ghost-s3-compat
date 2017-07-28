@@ -1,5 +1,8 @@
 # ghost-s3-storage-adapter
 
+## 3.0.5
+- fix issue with config (thx @norla)
+
 ## 3.0.3
 - Name change to ghost-s3-storage-adapter
 
