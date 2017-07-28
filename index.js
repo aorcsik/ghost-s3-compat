@@ -151,9 +151,10 @@ S3Store.prototype.serve = function(options) {
         };
     }
 
+    var that = this;
     return function (req, res, next) {
         var params = {
-            Bucket: this.config.bucket,
+            Bucket: that.config.bucket,
             Key: req.path.replace(/^\//, '')
         };
 
