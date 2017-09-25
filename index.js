@@ -40,8 +40,8 @@ if (BaseStore) util.inherits(S3Store, BaseStore);
 S3Store.prototype.getObjectURL = function(filename) {
     var assetHost = this.config.assetHost;
     if (!assetHost) {
-        var reagionSubdomain = (this.config.region == 'us-east-1') ? 's3' : 's3-' + this.config.region;
-        assetHost = 'https://' + reagionSubdomain + '.amazonaws.com/' + this.config.bucket + '/';
+        var regionSubdomain = (this.config.region == 'us-east-1') ? 's3' : 's3-' + this.config.region;
+        assetHost = 'https://' + regionSubdomain + '.amazonaws.com/' + this.config.bucket + '/';
     }
     return assetHost + filename;
 };
