@@ -47,14 +47,12 @@ S3Store.prototype.getObjectURL = function(filename) {
 };
 
 S3Store.prototype.initS3Client = function() {
-    if (!!this.config.accessKeyId &&
-        !!this.config.secretAccessKey &&
-        !!this.config.bucket &&
+    if (!!this.config.bucket &&
         !!this.config.region) {
         if (!this.s3Client) {
             this.s3Client = new AWS.S3({
-                accessKeyId: this.config.accessKeyId,
-                secretAccessKey: this.config.secretAccessKey,
+                accessKeyId: this.config.accessKeyId || null,
+                secretAccessKey: this.config.secretAccessKey || null,
                 region: this.config.region
             });
         }
